@@ -41,6 +41,7 @@ Route::group(['as' => 'auth.'], function () {
 
 // Custom pages model
 
+/*
 Route::get('/{page}', ['as' => 'pages', function ($page) {
     $page = Contents::where('slug', $page)->first();
     if (isset($page)) {
@@ -49,6 +50,10 @@ Route::get('/{page}', ['as' => 'pages', function ($page) {
 
     App::abort(404);
 }]);
+*/
+
+
+
 
 // ---------------------------------------------------------------------------------------------
 

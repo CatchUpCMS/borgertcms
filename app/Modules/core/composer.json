@@ -1,0 +1,16 @@
+{
+  "name": "rakko/core",
+  "description": "Core Functionality for Rakko",
+  "keywords": [
+    "Functions",
+    "CMS",
+    "Rakko"
+  ],
+  "require": {
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

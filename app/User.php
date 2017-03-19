@@ -2,14 +2,14 @@
 
 namespace App;
 
-use Laravel\Passport\HasApiTokens;
+
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Sortable, Notifiable, HasApiTokens;
+    use Sortable, Notifiable;
 
     /**
      * The attributes that are mass assignable.

@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'SomeRandomString'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     /*
     |--------------------------------------------------------------------------
@@ -159,7 +159,18 @@ return [
 
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
-        Laravel\Passport\PassportServiceProvider::class,
+
+        /*
+         * Development Service Providers...
+         */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        /*
+         * Service Providers...
+         */
+        Caffeinated\Modules\ModulesServiceProvider::class,
+        Caffeinated\Themes\ThemesServiceProvider::class,
 
     ],
 
@@ -212,6 +223,18 @@ return [
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Routing' => App\Http\Routes\Routing::class,
+
+
+        /*
+        * Development Package Alias
+        */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        /*
+        * Package Alias
+        */
+        'Module' => Caffeinated\Modules\Facades\Module::class,
+        'Theme' => Caffeinated\Themes\Facades\Theme::class,
 
     ],
 

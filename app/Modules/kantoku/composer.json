@@ -1,0 +1,12 @@
+{
+	"name": "rakko/kantoku",
+	"description": "Module Manager for Rakko",
+	"keywords": ["Theme", "CMS", "Rakko"],
+	"require": {
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

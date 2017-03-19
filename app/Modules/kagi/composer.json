@@ -1,0 +1,12 @@
+{
+	"name": "rakko/kagi",
+	"description": "Authentication / Authorization Functionality for Rakko",
+	"keywords": ["Authentication', 'Authorization", "users", "CMS", "Rakko"],
+	"require": {
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
