@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => 'web', 'prefix' => 'relations', 'namespace' => 'Modules\Relations\Http\Controllers'], function () {
+Route::group(['middleware' => 'web', 'prefix' => 'relations'], function () {
     Route::get('/', 'RelationsController@index');
 
     Route::get('relations', ['as' => 'relations.relations.index', 'uses' => 'RelationsController@index']);

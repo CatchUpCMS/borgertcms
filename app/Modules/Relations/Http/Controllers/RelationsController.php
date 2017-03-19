@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Relations\Http\Controllers;
+namespace App\Modules\Relations\Http\Controllers;
 
 use Modules\Relations\DataTables\RelationsDataTable;
 use App\Http\Requests\Relations;
@@ -8,10 +8,10 @@ use App\Http\Requests\Relations\CreateRelationsRequest;
 use App\Http\Requests\Relations\UpdateRelationsRequest;
 use Modules\Relations\Repositories\RelationsRepository;
 use Flash;
-use Modules\Core\Http\Controllers\AppBaseController;
+use App\Http\Controllers\Controller;
 use Response;
 
-class RelationsController extends AppBaseController
+class RelationsController extends Controller
 {
     /** @var  RelationsRepository */
     private $relationsRepository;
