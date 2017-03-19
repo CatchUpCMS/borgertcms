@@ -14,12 +14,13 @@ class ModuleServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadTranslationsFrom(__DIR__.'/../Resources/Lang', 'relations');
+        $this->registerConfig();
         $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'relations');
         $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations', 'relations');
     }
 
     /**
-     * Register the module services.
+     * Register the service providers.
      *
      * @return void
      */
@@ -27,4 +28,22 @@ class ModuleServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
     }
+
+    /**
+     * Register config.
+     *
+     * @return void
+     */
+    protected function registerConfig()
+    {
+        $this->publishes([
+            __DIR__.'/../Config/config.php' => config_path('relations.php'),
+        ], 'config');
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/config.php', 'relations'
+        );
+    }
+
+
+
 }

@@ -35,8 +35,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapWebRoutes();
-
+        $this->mapFrontendRoutes();
+        $this->mapBackendRoutes();
         $this->mapApiRoutes();
 
         //
@@ -49,15 +49,34 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapWebRoutes()
+    protected function mapFrontendRoutes()
     {
         Route::group([
             'middleware' => 'web',
             'namespace'  => $this->namespace,
         ], function ($router) {
-            require module_path('relations', 'Routes/web.php');
+            require module_path('relations', 'Routes/frontendroutes.php');
         });
     }
+
+
+    /**
+     * Define the "web" routes for the module.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapBackendRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace'  => $this->namespace,
+        ], function ($router) {
+            require module_path('relations', 'Routes/backendroutes.php');
+        });
+    }
+
 
     /**
      * Define the "api" routes for the module.
@@ -73,7 +92,7 @@ class RouteServiceProvider extends ServiceProvider
             'namespace'  => $this->namespace,
             'prefix'     => 'api',
         ], function ($router) {
-            require module_path('relations', 'Routes/api.php');
+            require module_path('relations', 'Routes/apiroutes.php');
         });
     }
 }
